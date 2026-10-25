@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 5 - Functions & Scope</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 0 16px;
+      color: #222;
+      background: #fafafa;
+    }
+    h2 { margin-bottom: 8px; color: #111; }
+    p.sub { color: #666; font-size: 14px; margin-bottom: 20px; }
+    .form-group { margin-bottom: 14px; }
+    label { display: block; font-weight: bold; font-size: 13px; margin-bottom: 4px; }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    button:hover { background: #1565c0; }
+    .output-box {
+      margin-top: 20px;
+      background: #212529;
+      color: #f8f9fa;
+      padding: 14px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h2>Assignment 5: Function Architecture & Scope</h2>
+  <p class="sub">Standard function (default params), arrow function (custom params), and block scope test.</p>
+
+  <div class="form-group">
+    <label for="customLength">Custom Rectangle Length:</label>
+    <input type="number" id="customLength" value="10" />
+  </div>
+
+  <div class="form-group">
+    <label for="customWidth">Custom Rectangle Width:</label>
+    <input type="number" id="customWidth" value="3" />
+  </div>
+
+  <button onclick="handleRunFunctions()">Execute Functions & Scope Test</button>
+
+  <div class="output-box" id="result">Click 'Execute Functions & Scope Test' to see the output.</div>
+
+  <script src="script.js"></script>
+  <script>
+    function handleRunFunctions() {
+      const len = document.getElementById("customLength").value;
+      const wid = document.getElementById("customWidth").value;
+      const output = runScopeDemo(len, wid);
+      document.getElementById("result").textContent = output;
+    }
+    window.addEventListener("DOMContentLoaded", handleRunFunctions);
+  </script>
+</body>
+</html>

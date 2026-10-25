@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2 - Operators & Input Handling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 0 16px;
+      color: #222;
+      background: #fafafa;
+    }
+    h2 { margin-bottom: 8px; color: #111; }
+    p.sub { color: #666; font-size: 14px; margin-bottom: 20px; }
+    .form-group { margin-bottom: 14px; }
+    label { display: block; font-weight: bold; font-size: 13px; margin-bottom: 4px; }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 8px;
+      margin-right: 8px;
+    }
+    button:hover { background: #1565c0; }
+    .btn-prompt {
+      background: #455a64;
+    }
+    .btn-prompt:hover { background: #37474f; }
+    .output-box {
+      margin-top: 20px;
+      background: #212529;
+      color: #f8f9fa;
+      padding: 14px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h2>Assignment 2: Operators, Expressions & Input Handling</h2>
+  <p class="sub">Calculate bill total and tip using arithmetic and assignment operators.</p>
+
+  <div class="form-group">
+    <label for="bill">Bill Subtotal (₹):</label>
+    <input type="number" id="bill" value="100" min="0" />
+  </div>
+
+  <div class="form-group">
+    <label for="tip">Tip Percentage (%):</label>
+    <input type="number" id="tip" value="15" min="0" />
+  </div>
+
+  <button onclick="handleCalculate()">Calculate Total</button>
+  <button class="btn-prompt" onclick="handlePromptInput()">Use Browser prompt()</button>
+
+  <div class="output-box" id="result">Click 'Calculate Total' to see the output.</div>
+
+  <script src="script.js"></script>
+  <script>
+    function handleCalculate() {
+      const bill = document.getElementById("bill").value;
+      const tip = document.getElementById("tip").value;
+      const output = calculateBill(bill, tip);
+      document.getElementById("result").textContent = output;
+    }
+
+    function handlePromptInput() {
+      const bill = prompt("Enter bill amount in ₹:", "100");
+      const tip = prompt("Enter tip percentage (%):", "15");
+      if (bill !== null && tip !== null) {
+        document.getElementById("bill").value = bill;
+        document.getElementById("tip").value = tip;
+        const output = calculateBill(bill, tip);
+        document.getElementById("result").textContent = output;
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", handleCalculate);
+  </script>
+</body>
+</html>

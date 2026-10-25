@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Internship Assignments & Capstone Project</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+    header {
+      background: #1e293b;
+      color: #fff;
+      padding: 20px 24px;
+    }
+    header h1 {
+      margin: 0 0 6px 0;
+      font-size: 22px;
+    }
+    header p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .nav-tabs {
+      display: flex;
+      background: #0f172a;
+      overflow-x: auto;
+      padding: 0 16px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: #fff;
+    }
+    .tab-btn.active {
+      color: #38bdf8;
+      border-bottom: 3px solid #38bdf8;
+    }
+    .container {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    .frame-wrapper {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    .frame-bar {
+      background: #f8fafc;
+      padding: 10px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .frame-bar a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .frame-bar a:hover {
+      text-decoration: underline;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JavaScript Internship Practical Tasks & Capstone Project</h1>
+    <p>Interactive Frontend Portal — Test all assignments and the capstone project directly on the UI</p>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="loadTab('Assignment-1-Variables-and-DataTypes/index.html', this, 'Assignment 1: Variables & Data Types')">Assignment 1</button>
+    <button class="tab-btn" onclick="loadTab('Assignment-2-Operators-and-Input/index.html', this, 'Assignment 2: Operators & Input Handling')">Assignment 2</button>
+    <button class="tab-btn" onclick="loadTab('Assignment-3-Conditional-Logic/index.html', this, 'Assignment 3: Conditional Logic')">Assignment 3</button>
+    <button class="tab-btn" onclick="loadTab('Assignment-4-Loops-and-Control-Structures/index.html', this, 'Assignment 4: Loop Control Structures')">Assignment 4</button>
+    <button class="tab-btn" onclick="loadTab('Assignment-5-Functions-and-Scope/index.html', this, 'Assignment 5: Functions & Scope')">Assignment 5</button>
+    <button class="tab-btn" onclick="loadTab('Assignment-6-Arrays-and-Objects/index.html', this, 'Assignment 6: Arrays & Objects')">Assignment 6</button>
+    <button class="tab-btn" onclick="loadTab('Capstone-Mini-Project/index.html', this, 'Capstone Mini Project: Inventory Dashboard')">Capstone Project</button>
+  </nav>
+
+  <div class="container">
+    <div class="frame-wrapper">
+      <div class="frame-bar">
+        <span id="currentTitle">Assignment 1: Variables & Data Types</span>
+        <a id="directLink" href="Assignment-1-Variables-and-DataTypes/index.html" target="_blank">Open in New Tab &rarr;</a>
+      </div>
+      <iframe id="contentFrame" src="Assignment-1-Variables-and-DataTypes/index.html"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function loadTab(url, btnElement, title) {
+      document.getElementById("contentFrame").src = url;
+      document.getElementById("directLink").href = url;
+      document.getElementById("currentTitle").textContent = title;
+
+      const buttons = document.querySelectorAll(".tab-btn");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      btnElement.classList.add("active");
+    }
+  </script>
+</body>
+</html>
